@@ -32,7 +32,6 @@ class MoviesActivity : AppCompatActivity() {
     private var isLoading: Boolean = false
     private var isLastPage: Boolean = false
     private var currentPage: Int = 1
-   // private val totalPages: Int = 3
     private lateinit var mViewModel: MoviesListViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -114,10 +113,6 @@ class MoviesActivity : AppCompatActivity() {
             movieListAdapter.setMovies(moviesList)
             movieListAdapter.addLoadingFooter()
             movieListAdapter.notifyDataSetChanged()
-//            if (currentPage == totalPages) {
-//                movieListAdapter.removeLoadingFooter()
-//                isLastPage = true
-//            }
         } else {
             if (moviesList.isNotEmpty()) {
                 movieListAdapter.removeLoadingFooter()

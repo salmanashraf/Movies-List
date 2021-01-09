@@ -25,7 +25,7 @@ import kotlinx.android.synthetic.main.activity_movie_details.*
 class MovieDetailActivity : AppCompatActivity() {
 
     companion object {
-        const val REQUEST_MOVIE_ID = "MovieId"
+        const val REQUEST_MOVIE_ID = "MovieID"
     }
 
     val weburl = "https://www.themoviedb.org/movie/"

@@ -2,15 +2,21 @@ package com.test.movieslist.ui.movies
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso
+import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.rule.ActivityTestRule
 import com.test.movieslist.R
+import com.test.movieslist.ui.movies.adapters.MovieListAdapter
 import junit.framework.TestCase
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+
 
 class MoviesActivityTest : TestCase(){
 
@@ -31,6 +37,14 @@ class MoviesActivityTest : TestCase(){
         mActivity = activityActivityTestRule.getActivity()
     }
 
+    @Test
+    fun checkClick(){
+        val viewInteraction = Espresso.onView(withId(R.id.moviesRecyclerView))
+       // viewInteraction.perform(click())
+        viewInteraction.perform(
+            RecyclerViewActions
+                .actionOnItemAtPosition<RecyclerView.ViewHolder>(1, click()))
+    }
     @Test
     fun movieListRecyclerViewTest() {
 
